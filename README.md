@@ -1,55 +1,55 @@
-# Google Flights Scraper
+# Google Flights スクレイパー
 
-[![Promo](https://github.com/luminati-io/LinkedIn-Scraper/blob/main/Proxies%20and%20scrapers%20GitHub%20bonus%20banner.png)](https://brightdata.com/products/web-scraper/google-flights)
+[![Promo](https://github.com/luminati-io/LinkedIn-Scraper/blob/main/Proxies%20and%20scrapers%20GitHub%20bonus%20banner.png)](https://brightdata.jp/products/web-scraper/google-flights)
 
-This repository provides two ways to extract flight data from Google Flights:
+このリポジトリでは、Google Flights からフライトデータを抽出するための2つの方法を提供します。
 
-1. **Free Google Flights Scraper:** Ideal for small-scale extraction
-2. **Google Flights Scraper API:** Designed for high-volume, real-time data extraction with unlimited requests. Part of Bright Data's [SERP Scraping API](https://brightdata.com/products/serp-api).
+1. **無料 Google Flights スクレイパー:** 小規模な抽出に最適です
+2. **Google Flights スクレイパー API:** 大量かつリアルタイムのデータ抽出向けに設計されており、リクエスト数は無制限です。Bright Data の [SERP Scraping API](https://brightdata.jp/products/serp-api) の一部です。
 
 
 ## Table of Contents
-2. [Free Scraper](#free-scraper)
-   - [Setup Requirements](#setup-requirements)
-   - [Quick Start](#quick-start)
-   - [Sample Output](#sample-output)
-   - [Limitations](#limitations)
-3. [Google Flights Scraper API](#google-flights-api)
-   - [Key Features](#key-features)
-   - [Prerequisites](#prerequisites)
-   - [Direct API Access](#direct-api-access)
-   - [Native Proxy-Based Access](#native-proxy-based-access)
-4. [Additional Parameters](#additional-parameters)
-   - [Localization Parameters](#localization-parameters)
-   - [Currency Parameter](#currency-parameter)
-5. [Support & Resources](#support--resources)
+2. [無料スクレイパー](#free-scraper)
+   - [セットアップ要件](#setup-requirements)
+   - [クイックスタート](#quick-start)
+   - [サンプル出力](#sample-output)
+   - [制限事項](#limitations)
+3. [Google Flights スクレイパー API](#google-flights-api)
+   - [主な機能](#key-features)
+   - [前提条件](#prerequisites)
+   - [Direct API アクセス](#direct-api-access)
+   - [ネイティブのプロキシベースのアクセス](#native-proxy-based-access)
+4. [追加パラメータ](#additional-parameters)
+   - [ローカライゼーションパラメータ](#localization-parameters)
+   - [通貨パラメータ](#currency-parameter)
+5. [サポート＆リソース](#support--resources)
 
-## Free Scraper
-A quick and simple scraper for limited data extraction from Google Flights.
+## 無料スクレイパー
+Google Flights から限られたデータを抽出するための、手早くシンプルなスクレイパーです。
 
 <img width="800" alt="google-flights-scraper" src="https://github.com/luminati-io/google-flights-api/blob/main/images/424383720-44ae10b1-4974-497e-9a7c-c1a762614f0e.png" />
 
-### Setup Requirements
+### セットアップ要件
 - [Python 3.9+](https://www.python.org/downloads/)
-- [Playwright](https://playwright.dev/) for browser automation
+- ブラウザ自動化のための [Playwright](https://playwright.dev/)
 
 ```bash
 pip install playwright
 playwright install chromium
 ```
 
-> **New to web scraping?** Explore our [Beginner's Guide to Web Scraping with Python](https://brightdata.com/blog/how-tos/web-scraping-with-python)
+> **Webスクレイピングは初めてですか？** こちらの [Python で学ぶ Webスクレイピング入門ガイド](https://brightdata.jp/blog/how-tos/web-scraping-with-python) をご覧ください
 >
 
-### Quick Start
-1. Open [google-flights-scraper.py](https://github.com/luminati-io/google-flights-api/blob/main/google-flights-scraper/google-flights-scraper.py)
-2. Update the following variable:
-    - `url`: Paste the Google Flights URL (usually contains `tfs`).
-3. Run the script.
+### クイックスタート
+1. [google-flights-scraper.py](https://github.com/luminati-io/google-flights-api/blob/main/google-flights-scraper/google-flights-scraper.py) を開きます
+2. 次の変数を更新します:
+    - `url`: Google Flights のURLを貼り付けます（通常 `tfs` を含みます）。
+3. スクリプトを実行します。
 
-💡 Pro Tip: Set `HEADLESS = False` to minimize detection by Google's anti-scraping measures.
+💡 Pro Tip: Google のアンチスクレイピング対策による検知を最小化するために、`HEADLESS = False` に設定してください。
 
-### Sample Output
+### サンプル出力
 ```json
 {
   "airline": "Emirates",
@@ -63,42 +63,42 @@ playwright install chromium
 }
 ```
 
-👉  [View complete output sample](https://github.com/luminati-io/google-flights-api/blob/main/google-flights-results/flight_results.json)
+👉  [完全な出力サンプルを見る](https://github.com/luminati-io/google-flights-api/blob/main/google-flights-results/flight_results.json)
 
 
-### Limitations
-The Free Scraper has several constraints:
-- High risk of IP blocking
-- Limited request volume
-- Frequent CAPTCHAs
-- Unreliable for production use
+### 制限事項
+無料スクレイパーにはいくつかの制約があります:
+- IPアドレスがブロックされるリスクが高いです
+- リクエスト量が制限されます
+- CAPTCHA が頻繁に発生します
+- 本番利用には信頼性が不十分です
 
-For robust, scalable scraping without these limitations, consider Bright Data's dedicated API below. 👇
+これらの制限なしで堅牢かつスケーラブルなスクレイピングを行うには、以下の Bright Data 専用APIをご検討ください。👇
 
-## Google Flights Scraper API
-[Bright Data's Google Flights Scraper API](https://brightdata.com/products/web-scraper/google-flights) is integrated into the [SERP Scraping API](https://brightdata.com/products/serp-api) and leverages our extensive [proxy network](https://brightdata.com/proxy-types) to extract real-time flight data—including prices, schedules, and airline details—at scale, without CAPTCHAs or IP blocks.
+## Google Flights スクレイパー API
+[Bright Data の Google Flights スクレイパー API](https://brightdata.jp/products/web-scraper/google-flights) は [SERP Scraping API](https://brightdata.jp/products/serp-api) に統合されており、当社の広範な [プロキシネットワーク](https://brightdata.jp/proxy-types) を活用して、価格、スケジュール、航空会社の詳細などのリアルタイムなフライトデータを、CAPTCHA や IP ブロックなしで大規模に抽出します。
 
-### Key Features
+### 主な機能
 
-- **Global Accuracy:** Tailored results for specific locations
-- **Pay-Per-Success:** Only pay for successful requests
-- **Real-Time Data:** Get up-to-date flights data in seconds
-- **Unlimited Scalability:** Handle high-volume scraping effortlessly
-- **Cost-Efficient:** Eliminates the need for costly infrastructure
-- **Reliable Performance:** Built-in anti-blocking technology
-- **24/7 Expert Support:** Assistance whenever required
+- **グローバルな正確性:** 特定の場所に合わせた結果を提供します
+- **Pay-Per-Success:** 成功したリクエストに対してのみ支払います
+- **リアルタイムデータ:** 最新のフライトデータを数秒で取得します
+- **無制限のスケーラビリティ:** 大量のスクレイピングを容易に処理します
+- **コスト効率:** 高価なインフラが不要になります
+- **信頼性の高いパフォーマンス:** ブロック回避技術を内蔵しています
+- **24/7 専門サポート:** 必要なときにいつでも支援を受けられます
 
-### Prerequisites
+### 前提条件
 
-1. [Create a Bright Data account](https://brightdata.com/) (new users receive a $5 credit).
-2. Generate your [API key](https://docs.brightdata.com/general/account/api-token).
-3. Follow our [step-by-step guide](https://github.com/luminati-io/google-flights-api/blob/main/setup-serp-api-guide.md) to configure the SERP API and set up your credentials.
+1. [Bright Data アカウントを作成](https://brightdata.jp/) します（新規ユーザーには $5 のクレジットが付与されます）。
+2. [API key](https://docs.brightdata.com/general/account/api-token) を生成します。
+3. [ステップバイステップガイド](https://github.com/luminati-io/google-flights-api/blob/main/setup-serp-api-guide.md) に従って SERP API を設定し、認証情報をセットアップします。
 
-### Direct API Access
+### Direct API アクセス
 
-Make a direct request to the API endpoint.
+API エンドポイントへ直接リクエストします。
 
-**cURL Example:**
+**cURL 例:**
 
 ```bash
 curl https://api.brightdata.com/request \
@@ -111,7 +111,7 @@ curl https://api.brightdata.com/request \
       }'
 ```
 
-**Python Example:**
+**Python 例:**
 
 ```python
 import requests
@@ -131,11 +131,11 @@ with open("google-flights-data.html", "w", encoding="utf-8") as file:
 print("HTML response saved to 'google-flights-data.html'.")
 ```
 
-### Native Proxy-Based Access
+### ネイティブのプロキシベースのアクセス
 
-Alternatively, use Bright Data's proxy routing method.
+代わりに、Bright Data のプロキシルーティング方式を使用します。
 
-**cURL Example:**
+**cURL 例:**
 
 ```bash
 curl -i \
@@ -145,7 +145,7 @@ curl -i \
   "https://www.google.com/travel/flights/search?tfs=CBwQAhojEgoyMDI1LTA0LTAxagcIARIDREVMcgwIAxIIL20vMDRqcGxAAUgBcAGCAQsI____________AZgBAg"
 ```
 
-**Python Example:**
+**Python 例:**
 
 ```python
 import requests
@@ -169,55 +169,55 @@ with open("google-flights-data.html", "w", encoding="utf-8") as file:
 print("Response saved to 'google-flights-data.html'.")
 ```
 
-👉 View the [full HTML output](https://github.com/luminati-io/google-flights-api/blob/main/google-flights-api-output/google-flights-data.html).
+👉 [完全な HTML 出力](https://github.com/luminati-io/google-flights-api/blob/main/google-flights-api-output/google-flights-data.html) をご覧ください。
 
-**Note:** For production use, load Bright Data's SSL certificate as per the [SSL Certificate Guide](https://docs.brightdata.com/general/account/ssl-certificate).
+**注:** 本番利用では、[SSL Certificate Guide](https://docs.brightdata.com/general/account/ssl-certificate) に従って Bright Data の SSL 証明書を読み込んでください。
 
 
-## Additional Parameters
-Fine-tune your Google Flights data extraction with these optional parameters.
+## 追加パラメータ
+これらのオプションパラメータを使って、Google Flights のデータ抽出を微調整できます。
 
-### Localization Parameters
+### ローカライゼーションパラメータ
 <img width="800" alt="bright-data-google-flights-api-localization" src="https://github.com/luminati-io/google-flights-api/blob/main/images/424454961-e77f10c9-8e44-46aa-be3d-64c756741479.png" />
 
-Customize search results based on location and language:
+場所と言語に基づいて検索結果をカスタマイズします:
 
 | Parameter | Description | Example |
 | --- | --- | --- |
-| gl | Two-letter country code | `gl=us` (United States) |
-| hl | Two-letter language code | `hl=en` (English) |
+| gl | 2文字の国コード | `gl=us` (United States) |
+| hl | 2文字の言語コード | `hl=en` (English) |
 
 
-**Example:** Search for flights from Paris to London in French:
+**例:** パリからロンドンへのフライトをフランス語で検索します:
 
 ```bash
 curl --proxy brd.superproxy.io:33335 --proxy-user brd-customer-<customer-id>-zone-<zone-name>:<zone-password> \
 "https://www.google.com/travel/flights/search?tfs=CBwQAhojEgoyMDI1LTA0LTAxagcIARIDQ0RHcgwIAxIIL20vMDRqcGxAAUgBcAGCAQsI____________AZgBAg&hl=fr&gl=fr"
 ```
 
-### Currency Parameter
+### 通貨パラメータ
 
 <img width="800" alt="bright-data-google-flights-api-currency" src="https://github.com/luminati-io/google-flights-api/blob/main/images/424820088-c571e99f-b854-449e-abc2-60149611ad5b.png" />
 
-Define the currency for returned prices using the `curr` parameter.
+`curr` パラメータを使用して、返される価格の通貨を定義します。
 
-**Example:** Return prices in USD.
+**例:** 価格を USD で返します。
 
 ```bash
 curl --proxy brd.superproxy.io:33335 --proxy-user brd-customer-<customer-id>-zone-<zone-name>:<zone-password> \
 "https://www.google.com/travel/flights/search?tfs=CBwQAhojEgoyMDI1LTA0LTAxagcIARIDQ0RHcgwIAxIIL20vMDRqcGxAAUgBcAGCAQsI____________AZgBAg&hl=fr&gl=fr&curr=USD"
 ```
 
-## Support & Resources
+## サポート＆リソース
 
-- **Docs:** [SERP API Documentation](https://docs.brightdata.com/scraping-automation/serp-api/)
-- **Related APIs:** [Web Unlocker API](https://github.com/luminati-io/web-unlocker-api), [SERP API](https://github.com/luminati-io/serp-api), [Google Search API](https://github.com/luminati-io/google-search-api), [Google News Scraper](https://github.com/luminati-io/Google-News-Scraper), [Google Trends API](https://github.com/luminati-io/google-trends-api), [Google Reviews API](https://github.com/luminati-io/google-reviews-api), [Google Hotels API](https://github.com/luminati-io/google-hotels-api)
-- **Google Scraping Tutorials:**
-    - [How to Scrape Google Flights](https://brightdata.com/blog/web-data/how-to-scrape-google-flights)
-    - [How to Scrape Google Search Results](https://brightdata.com/blog/web-data/scraping-google-with-python)
-    - [How to Scrape Google Maps](https://brightdata.com/blog/web-data/how-to-scrape-google-maps)
-- **Use Cases:**
-    - [SEO & SERP Tracking](https://brightdata.com/use-cases/serp-tracking)
-    - [Travel Industry Data](https://brightdata.com/use-cases/travel)
-- **Additional Reading:** [Best SERP APIs](https://brightdata.com/blog/web-data/best-serp-apis)
-- **Contact Support:** [support@brightdata.com](mailto:support@brightdata.com)
+- **ドキュメント:** [SERP API Documentation](https://docs.brightdata.com/scraping-automation/serp-api/)
+- **関連 API:** [Web Unlocker API](https://github.com/luminati-io/web-unlocker-api), [SERP API](https://github.com/luminati-io/serp-api), [Google Search API](https://github.com/luminati-io/google-search-api), [Google News Scraper](https://github.com/luminati-io/Google-News-Scraper), [Google Trends API](https://github.com/luminati-io/google-trends-api), [Google Reviews API](https://github.com/luminati-io/google-reviews-api), [Google Hotels API](https://github.com/luminati-io/google-hotels-api)
+- **Google スクレイピングチュートリアル:**
+    - [How to Scrape Google Flights](https://brightdata.jp/blog/web-data/how-to-scrape-google-flights)
+    - [How to Scrape Google Search Results](https://brightdata.jp/blog/web-data/scraping-google-with-python)
+    - [How to Scrape Google Maps](https://brightdata.jp/blog/web-data/how-to-scrape-google-maps)
+- **ユースケース:**
+    - [SEO & SERP Tracking](https://brightdata.jp/use-cases/serp-tracking)
+    - [Travel Industry Data](https://brightdata.jp/use-cases/travel)
+- **追加の読み物:** [Best SERP APIs](https://brightdata.jp/blog/web-data/best-serp-apis)
+- **サポートへのお問い合わせ:** [support@brightdata.com](mailto:support@brightdata.com)
